@@ -21,7 +21,14 @@ Widget build(BuildContext context) {
 #### Snap with a Key
 ```dart
 
-class MyWidget extends StatelessWidget {
+class MyWidget extends StatefulWidget {
+  @override
+  _MyWidgetState createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> {
+  final key = GlobalKey<SnappableState>();
+  bool isVisible=true;
   final key = GlobalKey<SnappableState>();
   @override
   Widget build(BuildContext context) {
@@ -44,7 +51,7 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Snappable(
-      snapOntap: true,
+      snapOnTap: true,
       child: Text('This whill be snapped'),
     );
   }
